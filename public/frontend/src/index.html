@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="./helper/swiper.css" rel="stylesheet" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <script src="./helper/swiper.js"></script> -->
+  </head>
+
+  <body>
+    <div class="w-full max-w-12xl font-josefin">
+      <div
+        x-data="{ open: false }"
+        class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8"
+      >
+        <div
+          class="flex flex-row items-center justify-between lg:justify-start"
+        >
+          <a
+            href="./index.html"
+            class="text-lg font-bold tracking-tighter text-black-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8"
+          >
+            BeautyPalour
+          </a>
+          <button
+            class="rounded-lg md:hidden focus:outline-none focus:shadow-outline"
+            @click="open = !open"
+          >
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-8 h-8">
+              <path
+                x-show="!open"
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+              <path
+                x-show="open"
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+                style="display: none"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col items-center flex-grow pb-4 border-gray-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2 hidden"
+        >
+          <a
+            class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-black-600 focus:outline-none focus:shadow-outline"
+            href="#"
+            >Vendors</a
+          >
+          <a
+            class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-black-600 focus:outline-none focus:shadow-outline"
+            href="#products"
+            >Products</a
+          >
+
+          <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+            <button
+              class="items-center block px-10 py-2.5 text-base font-medium text-center text-black-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            >
+              Sign in
+            </button>
+            <button
+              class="items-center block px-10 py-3 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+            >
+              Sign up
+            </button>
+          </div>
+        </nav>
+      </div>
+      <!-- Slider main container -->
+
+      <section>
+        <div
+          class="px-4 py-5 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24"
+        >
+          <div class="flex flex-col w-full mb-12 text-center">
+            <h1
+              class="max-w-5xl text-2xl font-black  leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl"
+            >
+              THE LEADING BEAUTY LOUNGE
+            </h1>
+            <p
+              class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-center text-gray-500"
+            >
+              When it comes to customer satisfaction, go no further. We've got
+              you covered.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="intro">
+        <div
+          class="relative flex flex-col items-center justify-center mx-auto rounded-lg lg:px-10 max-w-7xl"
+        >
+          <div class="swiper mySwiper max-w-screen-xl p-5 mx-auto object-cover
+          object-center w-full "">
+          <div class="swiper-wrapper">
+            <img class="rounded-xl swiper-slide" src="/images/b5.jpg" alt="" />
+            <img class="rounded-xl swiper-slide" src="/images/7.jpg" alt="" />
+            <img class="rounded-xl swiper-slide" src="/images/b1.jpg" alt="" />
+            <img class="rounded-xl swiper-slide" src="/images/5.jpg" alt="" />
+            <img class="rounded-xl swiper-slide" src="/images/b3.jpg" alt="" />
+          </div>
+
+          <div class="w-1/6">
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+          <!-- <div class="swiper-pagination"></div> -->
+        </div>
+      </section>
+
+      <!-- PRODUCTS CARDS -->
+
+      <div
+        class="container mt-24 max-w-7xl m-auto flex flex-wrap flex-col md:flex-row items-center justify-start"
+      >
+        <div class="flex flex-col w-full mb-12 text-center">
+          <h1
+            id="products"
+            class="max-w-5xl text-2xl font-black leading-none tracking-tighter text-neutral-600 md:text-2xl lg:text-4xl lg:max-w-7xl"
+          >
+            Products
+          </h1>
+        </div>
+
+        <div class="w-full lg:w-1/2 p-3 rounded-xl">
+          <div
+            class="flex flex-col lg:flex-row-reverse rounded overflow-hidden h-auto lg:h-32 border shadow-lg"
+          >
+            <div
+              class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
+              <div class="text-black font-normal text-xl mb-2 leading-tight">
+                Can coffee make you a biMter masseuse?
+              </div>
+              <p class="text-grey-darker text-base">Read more</p>
+            </div>
+            <img
+              class="block h-auto w-full lg:w-48 flex-none bg-cover"
+              src="/images/b1.jpg"
+            />
+          </div>
+        </div>
+        <div class="w-full lg:w-1/2 p-3 rounded-xl">
+          <div
+            class="flex flex-col lg:flex-row-reverse rounded overflow-hidden h-auto lg:h-32 border shadow-lg"
+          >
+            <div
+              class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
+              <div class="text-black font-bold text-xl mb-2 leading-tight">
+                Can coffee make you a biMter masseuse?
+              </div>
+              <p class="text-grey-darker text-base">Read more</p>
+            </div>
+            <img
+              class="block h-auto w-full lg:w-48 flex-none bg-cover"
+              src="/images/13.jpeg"
+            />
+          </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 p-3 rounded-xl">
+          <div
+            class="flex flex-col lg:flex-row-reverse rounded overflow-hidden h-auto lg:h-32 border shadow-lg"
+          >
+            <div
+              class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
+              <div class="text-black font-bold text-xl mb-2 leading-tight">
+                Can coffee make you a biMter masseuse?
+              </div>
+              <p class="text-grey-darker text-base">Read more</p>
+            </div>
+            <img
+              class="block h-auto w-full lg:w-48 flex-none bg-cover"
+              src="/images/b2.jpeg"
+            />
+          </div>
+        </div>
+
+        <div class="w-full lg:w-1/2 p-3 rounded-xl">
+          <div
+            class="flex flex-col lg:flex-row-reverse rounded overflow-hidden h-auto lg:h-32 border shadow-lg"
+          >
+            <div
+              class="bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal"
+            >
+              <div class="text-black font-bold text-xl mb-2 leading-tight">
+                Can coffee make you a biMter masseuse?
+              </div>
+              <p class="text-grey-darker text-base">Read more</p>
+            </div>
+            <img
+              class="block h-auto w-full lg:w-48 flex-none bg-cover"
+              src="/images/b3.jpg"
+            />
+          </div>
+        </div>
+
+        <!-- CARDS end -->
+
+        <!-- WORKERS -->
+    <!-- VENDORS -->
+    <!-- <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">Our Team</h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+        </div>
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/80x80">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Holden Caulfield</h2>
+                <p class="text-gray-500">UI Cosmetologist</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/84x84">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Henry Letham</h2>
+                <p class="text-gray-500">CTO</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/88x88">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Oskar Blinde</h2>
+                <p class="text-gray-500">Founder</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/90x90">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">John Doe</h2>
+                <p class="text-gray-500">DevOps</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/94x94">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Martin Eden</h2>
+                <p class="text-gray-500">Software Engineer</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/98x98">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Boris Kitua</h2>
+                <p class="text-gray-500">UX Researcher</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/100x90">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Atticus Finch</h2>
+                <p class="text-gray-500">QA Engineer</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/104x94">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Alper Kamu</h2>
+                <p class="text-gray-500">System</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div class="h-full flex items-center border-gray-200 border p-4 rounded-lg">
+              <img alt="team" class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4" src="https://dummyimage.com/108x98">
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Rodrigo Monchi</h2>
+                <p class="text-gray-500">Product Manager</p>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+
+    <div class="flex flex-wrap items-stretch xl:justify-between justify-center mt-24 xl:gap-6 gap-4">
+      <div class="flex flex-col w-full mb-12 text-center">
+        <h1
+          id="products"
+          class="max-w-5xl text-2xl font-black leading-none tracking-tighter text-neutral-600 md:text-2xl lg:text-4xl lg:max-w-7xl"
+        >
+         Meet Our Team
+        </h1>
+        <p
+        class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-center text-gray-500"
+      >
+      Wondering how possible to get access to the best specialists in the beauty industry, we are here for you.
+      </p>
+      </div>
+        <div class="lg:w-96 w-80">
+            <img src="https://i.ibb.co/Vm2T6Gj/team-1.png" class="h-72 w-full object-cover object-center rounded-t-md" alt="woman smiling" />
+            <div class=" bg-gray-400 shadow-md rounded-b-md py-4 text-center">
+                <p class="text-base font-medium leading-6 text-gray-600 dark:text-white">Samantha Jane</p>
+                <p class="text-base leading-6 mt-2 text-gray-800 dark:text-white">Cosmetologist</p>
+                 <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
+            </div>
+        </div>
+
+        <div class="bg-[#dec3c3] rounded-md lg:w-96 w-80 flex flex-col items-center justify-center md:py-0 py-12">
+            <h3 class="text-2xl font-semibold leading-6 text-center text-white">About Team</h3>
+            <p class="lg:w-80 lg:px-0 px-4 text-base leading-6 text-center text-white mt-6">
+                Teamwork is the collaborative effort of a team to achieve a common goal or to complete task in the most effective way. This concept is seen in the greater framework of a team in which indipendent indiviuals who work together towards common goal basic requirement for effective team 
+                and company
+            </p>
+        </div>
+
+        <div class="lg:w-96 w-80">
+            <img src="https://i.ibb.co/85Y7MG9/team-2.png" class="h-72 w-full object-cover object-center rounded-t-md" alt="woman in black dress" />
+            <div class=" bg-gray-400 shadow-md rounded-b-md py-4 text-center">
+                <p class="text-base font-medium leading-6 text-gray-600 dark:text-white">Marilyn Rhodes</p>
+                <p class="text-base leading-6 mt-2 text-gray-800 dark:text-white">Cosmetologist</p>
+                 <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
+            </div>
+        </div>
+        <div class="lg:w-96 w-80">
+            <img src="https://i.ibb.co/wKq8ZCW/team-3.png" class="h-72 w-full object-cover object-center rounded-t-md" alt="woman smiling" />
+            <div class=" bg-gray-400 shadow-md rounded-b-md py-4 text-center">
+                <p class="text-base font-medium leading-6 text-gray-600 dark:text-white">Marry Smith</p>
+                <p class="text-base leading-6 mt-2 text-gray-800 dark:text-white">Beauty Expert</p>
+                <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
+            </div>
+        </div>
+        <div class="lg:w-96 w-80">
+            <img src="https://i.ibb.co/TKzGPFx/team-4.png" class="h-72 w-full object-cover object-center rounded-t-md" alt="woman smiling" />
+            <div class=" bg-gray-400 shadow-md rounded-b-md py-4 text-center">
+                <p class="text-base font-medium leading-6 text-gray-600 dark:text-white">John Renolds</p>
+                <p class="text-base leading-6 mt-2 text-gray-800 dark:text-white">Masseuse</p>
+                 <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
+            </div>
+        </div>
+        <div class="lg:w-96 w-80">
+            <img src="https://i.ibb.co/Lng30RF/team-5.png" class="h-72 w-full object-cover object-center rounded-t-md" alt="woman smiling" />
+            <div class=" bg-gray-400 shadow-md rounded-b-md py-4 text-center">
+                <p class="text-base font-medium leading-6 text-gray-600 dark:text-white">Annie Jackie</p>
+                <p class="text-base leading-6 mt-2 text-gray-800 dark:text-white">Cosmetologist</p>
+                 <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
+            </div>
+        </div>
+    </div>
+
+    
+        <!-- VENDORS END -->
+        <!-- WORKERS END -->
+      </div>
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="pt-12 xl:pt-14 px-6">
+      <div
+        tabindex="0"
+        aria-label="footer"
+        class="focus:outline-none w-full border-gray-300 dark:border-gray-700 border-t lg:w-11/12 md:w-11/12 lg:mx-auto md:mx-auto"
+      >
+        <div class="container mx-auto py-12">
+          <div class="xl:flex lg:flex md:flex pt-6">
+            <div class="w-11/12 xl:w-3/6 lg:w-2/5 mx-auto lg:mx-0 xl:mx-0">
+              <div class="flex items-center mb-6 xl:mb-0 lg:mb-0">
+                <div aria-label="logo" role="img">
+                  <img
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg1.svg"
+                    alt="logo"
+                  />
+                </div>
+                <p
+                  tabindex="0"
+                  class="focus:outline-none ml-3 font-bold text-xl"
+                >
+                  BeautyPalour
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="xl:flex flex-wrap justify-between xl:mt-24 mt-16 pb-6 pl-3 sm:pl-0"
+          >
+            <div class="w-11/12 xl:w-2/6 mx-auto lg:mx-0 xl:mx-0 mb-6 xl:mb-0">
+              <p
+                tabindex="0"
+                class="focus:outline-none text-gray-800 text-base"
+              >
+              <div id="copyright"></div>BeautyPalour. All Rights Reserved
+              </p>
+            </div>
+            <div
+              class="w-11/12 xl:w-2/6 mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0"
+            >
+              <ul class="xl:flex lg:flex md:flex sm:flex justify-between">
+                <li
+                  class="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0"
+                >
+                  <a
+                    class="focus:outline-none focus:underline"
+                    href="javascript:void(0)"
+                    >Terms of service</a
+                  >
+                </li>
+                <li
+                  class="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0"
+                >
+                  <a
+                    class="focus:outline-none focus:underline"
+                    href="javascript:void(0)"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li
+                  class="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0"
+                >
+                  <a
+                    class="focus:outline-none focus:underline"
+                    href="javascript:void(0)"
+                    >Security</a
+                  >
+                </li>
+                <li
+                  class="text-gray-800 hover:text-gray-900 text-base mb-4 sm:mb-0"
+                >
+                  <a
+                    class="focus:outline-none focus:underline"
+                    href="javascript:void(0)"
+                    >Sitemap</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="w-11/12 xl:w-1/6 lg:w-1/6 sm:w-11/12 mx-auto lg:mx-0 xl:mx-0 mb-6 lg:mb-0 xl:mb-0 mt-8 lg:mt-8 xl:mt-0"
+            >
+              <div
+                class="flex justify-start sm:justify-start xl:justify-end space-x-6 pr-2 xl:pr-0 lg:pr-0 md:pr-0 sm:pr-0"
+              >
+                <div>
+                  <a aria-label="Twitter" role="link" href="javascript:void(0)">
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg2.svg"
+                      alt="Twitter"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    aria-label="Instagram"
+                    role="link"
+                    href="javascript:void(0)"
+                  >
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg3.svg"
+                      alt="Instagram"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a aria-label="Dribble" role="link" href="javascript:void(0)">
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg4.svg"
+                      alt="Dribble"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a aria-label="Github" role="link" href="javascript:void(0)">
+                    <img
+                      src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg5.svg"
+                      alt="Github"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- FOOTER END -->
+
+    
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      const paragraph = `
+      <p>
+        Copyright &copy; ${new Date().getFullYear()} 
+      </p>
+    `;
+
+      document.getElementById("copyright").innerHTML = paragraph;
+      var swiper = new Swiper(".mySwiper", {
+        centeredSlides: true,
+        creativeEffect: {
+          prev: {
+            shadow: true,
+            translate: [0, 0, -400],
+          },
+          next: {
+            translate: ["100%", 0, 0],
+          },
+        },
+        autoplay: {
+          delay: 4500,
+          disableOnInteraction: false,
+        },
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          //  type: "progressbar",
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
