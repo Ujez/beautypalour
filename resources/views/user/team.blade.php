@@ -20,7 +20,7 @@
         </div>
     </div> --}}
 
-    <div
+    {{-- <div
         class="bg-[#dec3c3] rounded-md lg:w-96 w-80 flex flex-col items-center justify-center  py-12">
         <h3 class="text-2xl font-semibold leading-6 text-center text-white">About Team</h3>
         <p class="lg:w-80 lg:px-0 px-4 text-base leading-6 text-center text-white mt-6">
@@ -30,7 +30,7 @@
             teamhome
             and company
         </p>
-    </div>
+    </div> --}}
     @foreach ($vendor as $vendors  )
             <div class="lg:w-96 w-80">
         <img src="vendorsimage/{{ $vendors->image }}"
