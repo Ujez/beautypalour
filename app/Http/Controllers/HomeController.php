@@ -24,7 +24,7 @@ class HomeController extends Controller
         // }
 
         if (Auth::id()) {
-            if (Auth::user()->usertype == '0') {
+            if (Auth::user()->usertype == '0'||'1') {
                 $vendor = vendor::all();
                 return view('user.home', compact('vendor'));
             } else {
@@ -62,7 +62,8 @@ class HomeController extends Controller
 
         }
         $data->save();
-        return redirect()->back();
+        return redirect()->back()->with("success","Appointment successfully scheduled, we'll contact you ASAP!");   
     }
+  
 
 }

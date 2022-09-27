@@ -4,12 +4,21 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
                 @if (session('success'))
-                  <div class="alert bg-yellow-100 rounded-lg py-5 px-6 mb-3 text-base text-yellow-700 inline-flex items-center w-full alert-dismissible fade show"
-                        role="alert">
-                        <p class="text-center">{{ session('success') }}</p>
+                <div class="px-40 my-10 ">
+                    <div id="dismiss" class="bg-green-100 border  px-4 py-3 rounded relative" role="alert">
+                        <p class="font-bold">{{ session('success') }}</p>
+                        <span id="toggle" class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                            <svg class="fill-current h-6 w-6 text-gray-500" role="button"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <title>Close</title>
+                                <path
+                                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                            </svg>
+                        </span>
                     </div>
-                @endif
-                  
+    
+                </div>
+            @endif
 
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4  text-neutral-600">Add A Vendor</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Vendors are added by the admin only</p>

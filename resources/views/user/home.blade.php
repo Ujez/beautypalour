@@ -31,7 +31,7 @@
                     fontFamily: {
                         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
                         'josefin': ['Josefin Sans', 'ubuntu'],
-                        
+
                     },
                 },
             },
@@ -56,6 +56,9 @@
 </head>
 
 <body>
+
+
+
     <div class="w-full max-w-12xl font-josefin">
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
@@ -113,8 +116,8 @@
                         THE LEADING BEAUTY LOUNGE
                     </h1>
                     <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-center text-gray-500">
-                        When it comes to customer satisfaction, go no further. We've got
-                        you covered.
+                        Style is something each of us already has, all we need to do is find it.
+                        Style is a way to say who you are without having to speak. —Rachel Zoe
                     </p>
                 </div>
                 <div class="p-2 w-full">
@@ -223,6 +226,23 @@
 
 
         </div>
+        @if (session('success'))
+            <div class="px-40 mt-24 ">
+                <div id="dismiss" class="bg-green-100 border  px-4 py-3 rounded relative" role="alert">
+                    <p>{{ session('success') }}</p>
+                    <span id="toggle" class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                        <svg class="fill-current h-6 w-6 text-gray-500" role="button"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <title>Close</title>
+                            <path
+                                d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                        </svg>
+                    </span>
+                </div>
+
+            </div>
+        @endif
+
         @include('user.appointment')
     </div>
 
@@ -303,7 +323,9 @@
                 </div>
             </div>
         </div>
+
     </div>
+
 
 
     <!-- FOOTER END -->
@@ -315,6 +337,15 @@
 
     <!-- Initialize Swiper -->
     <script>
+        const targetDiv = document.getElementById("dismiss");
+        const btn = document.getElementById("toggle");
+        btn.onclick = function() {
+            if (targetDiv.style.display !== "none") {
+                targetDiv.style.display = "none";
+            } else {
+                targetDiv.style.display = "block";
+            }
+        };
         const paragraph = `
       <p>
         Copyright &copy; ${new Date().getFullYear()} 
@@ -340,6 +371,7 @@
             },
         });
     </script>
+
 </body>
 
 </html>
