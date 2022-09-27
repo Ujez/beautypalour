@@ -23,7 +23,11 @@ Route::get('/mybookings', [HomeController::class, 'mybookings']
 );
 Route::get('/showbookings', [AdminController::class, 'showbookings']
 );
+Route::get('/approve_bookings/{id}', [AdminController::class, 'approvebookings']
+);
 Route::get('/cancel_bookings/{id}', [HomeController::class, 'cancelbookings']
+);
+Route::get('/cancel_bookings/{id}', [AdminController::class, 'cancelbookings']
 );
 Route::get('/admin/add', [AdminController::class, 'add']
 )->name('add.vendor');
