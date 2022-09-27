@@ -36,7 +36,7 @@ class AdminController extends Controller
 
         $data = appointments::all();
         return view('admin.showbookings', compact('data'));
-        # code...
+    
 
     }
     public function approvebookings($id)
