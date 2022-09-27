@@ -1,6 +1,6 @@
 <div class=" flex flex-wrap items-stretch xl:justify-between justify-center mt-24 xl:gap-6 gap-4">
     <div class="flex flex-col w-full mb-12 text-center">
-        <h1 id="products"
+        <h1 id="vendors"
             class="max-w-5xl text-2xl font-black leading-none tracking-tighter text-neutral-600 md:text-2xl lg:text-4xl lg:max-w-7xl">
             Meet Our Team
         </h1>
