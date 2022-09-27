@@ -63,7 +63,7 @@
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between lg:justify-start">
-                <a href="./index.html"
+                <a href="{{ url('/') }}"
                     class="text-lg font-bold tracking-tighter text-black-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
                     BeautyPalour
                 </a>
@@ -89,7 +89,10 @@
                 <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
                     @if (Route::has('login'))
                         @auth
+                            <a class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 text-center text-black-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
+                                href="{{ url('mybookings') }}">My Bookings</a>
                             <x-app-layout></x-app-layout>
+                      
                         @else
                             <a href="{{ route('login') }}"> <button
                                     class="items-center block px-10 py-2.5 text-base font-medium text-center text-black-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
@@ -102,6 +105,7 @@
                                 </button> </a>
                         @endauth
                     @endif
+
 
                 </div>
             </nav>
@@ -337,15 +341,6 @@
 
     <!-- Initialize Swiper -->
     <script>
-        const targetDiv = document.getElementById("dismiss");
-        const btn = document.getElementById("toggle");
-        btn.onclick = function() {
-            if (targetDiv.style.display !== "none") {
-                targetDiv.style.display = "none";
-            } else {
-                targetDiv.style.display = "block";
-            }
-        };
         const paragraph = `
       <p>
         Copyright &copy; ${new Date().getFullYear()} 
@@ -370,6 +365,15 @@
                 prevEl: ".swiper-button-prev",
             },
         });
+        const targetDiv = document.getElementById("dismiss");
+        const btn = document.getElementById("toggle");
+        btn.onclick = function() {
+            if (targetDiv.style.display !== "none") {
+                targetDiv.style.display = "none";
+            } else {
+                targetDiv.style.display = "block";
+            }
+        };
     </script>
 
 </body>

@@ -19,6 +19,10 @@ Route::get('/home', [HomeController::class, 'redirect']
 );
 Route::post('/appointments', [HomeController::class, 'appointment']
 );
+Route::get('/mybookings', [HomeController::class, 'mybookings']
+);
+Route::get('/cancel_bookings/{id}', [HomeController::class, 'cancelbookings']
+);
 Route::get('/admin/add', [AdminController::class, 'add']
 )->name('add.vendor');
 Route::post('/upload_vendor', [AdminController::class, 'upload']

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Appointments;
 use App\Models\User;
 use App\Models\Vendor;
-use App\Models\Appointments;
 // use GuzzleHttp\Psr7\Request; silly bug
 
 use Illuminate\Http\Request;
@@ -24,7 +24,7 @@ class HomeController extends Controller
         // }
 
         if (Auth::id()) {
-            if (Auth::user()->usertype == '0'||'1') {
+            if (Auth::user()->usertype == '0' || '1') {
                 $vendor = vendor::all();
                 return view('user.home', compact('vendor'));
             } else {
@@ -49,7 +49,7 @@ class HomeController extends Controller
     }
     public function appointment(Request $request)
     {
-        $data = new appointments;
+        $data = new Appointments();
         $data->name = $request->name;
         $data->email = $request->email;
         $data->date = $request->date;
@@ -62,8 +62,24 @@ class HomeController extends Controller
 
         }
         $data->save();
-        return redirect()->back()->with("success","Appointment successfully scheduled, we'll contact you ASAP!");   
+        return redirect()->back()->with("success", "Appointment successfully scheduled, we'll contact you ASAP!");
     }
-  
 
+    public function mybookings()
+    {
+        if (Auth::id()) {
+            $userid = Auth::user()->id;
+            $booking = Appointments::where('user_id', $userid)->get();
+            return view('user.mybookings', compact('booking'));
+            # code...
+        }
+
+    }
+    public function cancelbookings($id)
+    {
+      $data=Appointments::find($id);
+      $data->delete();
+      return redirect()->back();
+
+    }
 }
