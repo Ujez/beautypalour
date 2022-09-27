@@ -82,4 +82,10 @@ class HomeController extends Controller
       return redirect()->back();
 
     }
+    public function showbookings()
+    {
+        
+     return view('admin.showbookings');
+
+    }
 }

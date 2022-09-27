@@ -1,58 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeautyPalour</title>
-    <meta name="author" content="BeautyPalour Dashboard">
-    <meta name="description" content="">
-
-    <!-- Tailwind -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
-
-        .font-family-josefin {
-            font-family: "Josefin Sans", sans-serif;
-        }
-
-        .bg-sidebar {
-            background: #4a4b50;
-        }
-
-        .cta-btn {
-            color: #88898f;
-        }
-
-        .upgrade-btn {
-            background: #88898f;
-        }
-
-        .upgrade-btn:hover {
-            background: #88898f;
-        }
-
-        .active-nav-link {
-            background: #939497;
-        }
-
-        .nav-item:hover {
-            background: #464647;
-        }
-
-        .account-link:hover {
-            background: #717274;
-        }
-    </style>
-</head>
-
+@include('admin.header')
 
 <body class="bg-gray-100 font-family-josefin flex">
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
-            <a href="{{ url('dashboard') }}" class="text-white text-xl font-semibold uppercase hover:text-gray-300">Dashboard</a>
+            <a href="{{ url('dashboard') }}"
+                class="text-white text-xl font-semibold uppercase hover:text-gray-300">Dashboard</a>
             {{-- <button
                 class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                 <i class="fas fa-plus mr-3"></i> New Report
@@ -63,19 +17,21 @@
                 <i class="fas fa-tachometer-alt mr-3"></i>
                 Dashboard
             </a> --}}
-            <a href="{{ url('/') }}" class="flex items-center  text-white py-2 pl-4 nav-item">
+            <a href="{{ url('/') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-home mr-3"></i>
-              Home
-            </a>
+                Home
             <a href="{{ route('add.vendor') }}"
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-plus mr-3"></i>
-        Add Vendor
+                Add Vendor
             </a>
-            <a href="tables.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+            <a href="{{ url('showbookings') }}"
+                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-table mr-3"></i>
-                Tables
+                Bookings
             </a>
+          
             <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-align-left mr-3"></i>
                 Forms
@@ -124,7 +80,8 @@
         <!-- Mobile Header & Nav -->
         <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
             <div class="flex items-center justify-between">
-                <a href="{{ url('dashboard') }}" class="text-white text-xl font-semibold uppercase hover:text-gray-300">Dashboard</a>
+                <a href="{{ url('dashboard') }}"
+                    class="text-white text-xl font-semibold uppercase hover:text-gray-300">Dashboard</a>
                 <button @click="isOpen = !isOpen" class="text-white text-xl focus:outline-none">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
                     <i x-show="isOpen" class="fas fa-times"></i>
@@ -135,18 +92,18 @@
             <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col pt-4">
                 <a href="{{ url('/') }}" class="flex items-center  text-white py-2 pl-4 nav-item">
                     <i class="fas fa-home mr-3"></i>
-                  Home
+                    Home
                 </a>
-               
+
                 <a href="{{ route('add.vendor') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-sticky-note mr-3"></i>
                     Add Vendor
                 </a>
-                <a href="tables.html"
+                <a href="{{ url('showbookings') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-table mr-3"></i>
-                    Tables
+                    Bookings
                 </a>
                 <a href="forms.html"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
@@ -177,7 +134,8 @@
             <main class="w-full flex-grow p-6">
 
 
-            @yield('vendor')
+                @yield('vendor')
+                @yield('showbookings')
             </main>
 
 
@@ -185,14 +143,6 @@
 
     </div>
 
-    <!-- AlpineJS -->
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
-        integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
-    <!-- ChartJS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
-        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
   
     {{-- <script>
         var chartOne = document.getElementById('chartOne');
@@ -271,6 +221,7 @@
             }
         });
     </script> --}}
+    @include('admin.scripts')
 </body>
 
 </html>
