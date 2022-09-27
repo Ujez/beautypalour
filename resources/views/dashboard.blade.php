@@ -55,7 +55,7 @@
         </div>
         <div class="w-full z-10">
             <div
-                class="sticky top-0 bg-gray-600 header bg-white h-14 px-10 py-4 border-b-4 border-gray-900 flex items-center justify-between">
+                class="sticky top-0 bg-gray-600 header h-14 px-10 py-4 border-b-4 border-gray-900 flex items-center justify-between">
                 <div class="flex items-center space-x-12 text-sm">
                     <i class="hover:text-gray-400 text-xl fas fa-bars font-thin cursor-pointer text-white"
                         @click="open = !open"></i>

@@ -17,8 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [HomeController::class, 'redirect']
 );
+Route::post('/appointments', [HomeController::class, 'appointment']
+);
 Route::get('/admin/add', [AdminController::class, 'add']
 )->name('add.vendor');
+Route::post('/upload_vendor', [AdminController::class, 'upload']
+)->name('upload.vendor');
 Route::get('/', [HomeController::class, 'index']
 );
 

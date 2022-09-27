@@ -52,7 +52,7 @@
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
-            <a href="index.html" class="text-white text-xl font-semibold uppercase hover:text-gray-300">Admin</a>
+            <a href="{{ url('dashboard') }}" class="text-white text-xl font-semibold uppercase hover:text-gray-300">Dashboard</a>
             {{-- <button
                 class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                 <i class="fas fa-plus mr-3"></i> New Report
@@ -63,6 +63,10 @@
                 <i class="fas fa-tachometer-alt mr-3"></i>
                 Dashboard
             </a> --}}
+            <a href="{{ url('/') }}" class="flex items-center  text-white py-2 pl-4 nav-item">
+                <i class="fas fa-home mr-3"></i>
+              Home
+            </a>
             <a href="{{ route('add.vendor') }}"
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-plus mr-3"></i>
@@ -97,6 +101,10 @@
         <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
             <div class="w-1/2"></div>
             <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
+                <a href="{{ url('/') }}" class="flex items-center justify-center   py-2 px-2 ">
+                    <i class="fas fa-home mr-3"></i>
+                    HOME
+                </a>
                 {{-- <button @click="isOpen = !isOpen" class="realtive z-10 w-12 h-12 rounded-full overflow-hidden border-4 border-gray-400 hover:border-gray-300 focus:border-gray-300 focus:outline-none">
                     <img src="https://source.unsplash.com/uJ8LNVCBjFQ/400x400">
                 </button> --}} <x-app-layout>
@@ -116,7 +124,7 @@
         <!-- Mobile Header & Nav -->
         <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-white text-xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                <a href="{{ url('dashboard') }}" class="text-white text-xl font-semibold uppercase hover:text-gray-300">Dashboard</a>
                 <button @click="isOpen = !isOpen" class="text-white text-xl focus:outline-none">
                     <i x-show="!isOpen" class="fas fa-bars"></i>
                     <i x-show="isOpen" class="fas fa-times"></i>
@@ -125,14 +133,15 @@
 
             <!-- Dropdown Nav -->
             <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col pt-4">
-                <a href="index.html" class="flex items-center active-nav-link text-white py-2 pl-4 nav-item">
-                    <i class="fas fa-tachometer-alt mr-3"></i>
-                    Dashboard
+                <a href="{{ url('/') }}" class="flex items-center  text-white py-2 pl-4 nav-item">
+                    <i class="fas fa-home mr-3"></i>
+                  Home
                 </a>
-                <a href="{{ url('vendor.add') }}l"
+               
+                <a href="{{ route('add.vendor') }}"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">
                     <i class="fas fa-sticky-note mr-3"></i>
-                    Blank Page
+                    Add Vendor
                 </a>
                 <a href="tables.html"
                     class="flex items-center text-white opacity-75 hover:opacity-100 py-2 pl-4 nav-item">

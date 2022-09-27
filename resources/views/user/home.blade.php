@@ -30,7 +30,8 @@
                 extend: {
                     fontFamily: {
                         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-                        'josefin': ['Josefin Sans', 'ubuntu']
+                        'josefin': ['Josefin Sans', 'ubuntu'],
+                        
                     },
                 },
             },
@@ -78,7 +79,7 @@
             <nav :class="{ 'flex': open, 'hidden': !open }"
                 class="flex-col items-center flex-grow pb-4 border-gray-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2 hidden">
                 <a class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-black-600 focus:outline-none focus:shadow-outline"
-                    href="#">Vendors</a>
+                    href="#vendors">Vendors</a>
                 <a class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-black-600 focus:outline-none focus:shadow-outline"
                     href="#products">Products</a>
 
@@ -108,13 +109,18 @@
             <div class="px-4 py-5 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
                 <div class="flex flex-col w-full mb-12 text-center">
                     <h1
-                        class="max-w-5xl text-2xl font-black  leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
+                        class="max-w-5xl text-2xl font-black font-jost  leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
                         THE LEADING BEAUTY LOUNGE
                     </h1>
                     <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-center text-gray-500">
                         When it comes to customer satisfaction, go no further. We've got
                         you covered.
                     </p>
+                </div>
+                <div class="p-2 w-full">
+                    <a href="#booknow"><button
+                            class="flex mx-auto text-white border-0 py-2 px-8 text-base font-medium text-center  transition duration-500 ease-in-out transform bg-gray-600 rounded hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">Book
+                            Now</button></a>
                 </div>
             </div>
         </section>
@@ -217,7 +223,7 @@
 
 
         </div>
-      @include('user.appointment')
+        @include('user.appointment')
     </div>
 
 
