@@ -1,6 +1,6 @@
 @extends('layouts.heading')
 <section>
-    <div class="overflow-hidden h-full bg-gray-50 font-sans">
+    <div class="overflow-hidden  bg-gray-50 font-sans">
         <div class="flex flex-col justify-center flex-1 px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
             <div class="w-full max-w-xl mx-auto p-12 border border-gray-200  rounded-xl " ">
 
