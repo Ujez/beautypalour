@@ -104,7 +104,7 @@
           <div class=" bg-gray-400 shadow-md rounded-b-md py-4 text-center">
               <p class="text-base font-medium leading-6 text-gray-600 dark:text-white">Marilyn Rhodes</p>
               <p id="fweight" class="text-base leading-6 mt-2 text-gray-800 dark:text-white">Cosmetologist</p>
-               <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-xl hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
+               <button class=" mt-2 items-center px-3 py-2 text-base font-medium text-center text-white transition duration-500 ease-in-out transform bg-gray-600 rounded-lg hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">BOOK</button>
           </div>
       </div>
       <div class="lg:w-96 w-80">

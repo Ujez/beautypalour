@@ -1,8 +1,8 @@
 @extends('layouts.heading')
 <section>
-    <div class="overflow-hidden h-full bg-gray-50">
+    <div class="overflow-hidden h-full bg-gray-50 font-sans">
         <div class="flex flex-col justify-center flex-1 px-4 py-12 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
-            <div class="w-full max-w-xl mx-auto lg:w-96 bg-gray-50 p-12 drop-shadow-xl rounded-xl">
+            <div class="w-full max-w-xl mx-auto p-12 border border-gray-200  rounded-xl " ">
 
 
                 <x-jet-validation-errors class="mb-4" />
@@ -12,42 +12,43 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <div>
+                <span>
                   
-                    <a href="{{ route('home') }}">  <div aria-label="logo" role="img">
+                    <a href="{{ route('home') }}">  <span aria-label="logo" role="img">
                         <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg1.svg"
                             alt="logo" />
-                    </div></a>
+                    </span></a>
 
-                </div>
+                </span>
                 <h2 class=" mt-6 text-3xl text-neutral-600  ">Sign In.</h2>
                 <div class="mt-8">
                     <div class="mt-6">
                         <form action="{{ route('login') }}" method="POST" class="space-y-6">
+                            @csrf
                             <div>
                                 <label for="email" value="{{ __('Email') }}"
-                                    class="block text-sm font-medium text-neutral-600 uppercase fweight"> Email address
+                                    class="block text-sm font-medium text-neutral-600 uppercase "> Email address
                                 </label>
                                 <div class="mt-1">
                                     <input id="email" name="email" type="email" autocomplete="email" required
                                         autofocus placeholder="Your Email"
-                                        class=" block w-full px-5 py-3 text-base placeholder-gray-300 fweight
+                                        class=" block w-full px-5 py-3 text-base placeholder-gray-300 
                                          transition duration-500 ease-in-out transform border border-transparent
-                                          rounded-lg text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent
+                                          rounded-lg text-neutral-600 bg-gray-100 focus:outline-none focus:border-transparent
                                            focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300">
                                 </div>
                             </div>
 
                             <div class="space-y-1">
                                 <label for="password" value="{{ __('Password') }}"
-                                    class="block text-sm font-medium text-neutral-600 uppercase fweight"> Password
+                                    class="block text-sm font-medium text-neutral-600 uppercase "> Password
                                 </label>
                                 <div class="mt-1">
-                                    <input id="password" id="fweight" name="password" type="password"
+                                    <input id="password" id="" name="password" type="password"
                                         autocomplete="current-password" required="" placeholder="Your Password"
-                                        class="block w-full px-5 py-3 text-base placeholder-gray-300 fweight
+                                        class="block w-full px-5 py-3 text-base placeholder-gray-300 
                                          transition duration-500 ease-in-out transform border border-transparent
-                                          rounded-lg text-neutral-600 bg-gray-50 focus:outline-none focus:border-transparent
+                                          rounded-lg text-neutral-600 bg-gray-100 focus:outline-none focus:border-transparent
                                            focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-300">
                                 </div>
                             </div>
@@ -55,7 +56,7 @@
                             <div class="flex items-center justify-between">
                                 <div class="flex items-center">
                                     <input id="remember-me" name="remember" type="checkbox" placeholder="Your password"
-                                        class="w-4 h-4 text-blue-600 border-gray-200 rounded focus:ring-blue-500 fweight">
+                                        class="w-4 h-4 text-blue-600 border-gray-200 rounded focus:ring-blue-500 ">
                                     <label for="remember-me" class="block ml-2 text-sm text-neutral-600">Remember me
                                     </label>
                                 </div>
@@ -63,7 +64,7 @@
                                 <div class="text-sm">
                                     @if (Route::has('password.request'))
                                         <a href="{{ route('password.request') }}"
-                                            class="font-medium text-blue-600 hover:text-blue-500 fweight"> Forgot your
+                                            class="font-medium text-blue-600 hover:text-blue-500 "> Forgot your
                                             password? </a>
                                     @endif
                                 </div>

@@ -35,7 +35,7 @@
                     @if (Route::has('login'))
                         @auth
                             <a class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 text-center text-black-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
-                                href="{{ url('mybookings') }}">My Bookings</a>
+                                href="{{ route('mybookings') }}">My Bookings</a>
                             <x-app-layout></x-app-layout>
                       
                         @else
