@@ -18,11 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home', [HomeController::class, 'redirect']
 );
 Route::post('/appointments', [HomeController::class, 'appointment']
-);
+)->name('appointment');
 Route::get('/mybookings', [HomeController::class, 'mybookings']
-);
+)->name('mybookings');
 Route::get('/showbookings', [AdminController::class, 'showbookings']
-);
+)->name('showbookings');
 Route::get('/approve_bookings/{id}', [AdminController::class, 'approvebookings']
 );
 Route::get('/cancel_bookings/{id}', [HomeController::class, 'cancelbookings']
@@ -34,7 +34,7 @@ Route::get('/admin/add', [AdminController::class, 'add']
 Route::post('/upload_vendor', [AdminController::class, 'upload']
 )->name('upload.vendor');
 Route::get('/', [HomeController::class, 'index']
-);
+)->name('home');
 
 Route::middleware([
     'auth:sanctum',

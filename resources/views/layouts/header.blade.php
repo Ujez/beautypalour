@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;700&display=swap" rel="stylesheet">
     <script>
         const defaultTheme = require('tailwindcss/defaultTheme');
 
@@ -30,10 +32,17 @@
                 extend: {
                     fontFamily: {
                         sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-                        'josefin': ['Josefin Sans', 'ubuntu'],
+                        josefin: ['Josefin Sans', 'ubuntu'],
 
                     },
                 },
+                fontWeight: {
+                    'extra-light': 200,
+                    bold: 700,
+                    light: 300,
+
+
+                }
             },
 
             plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
@@ -57,13 +66,11 @@
 
 <body>
 
-
-
     <div class="w-full max-w-12xl font-josefin">
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between lg:justify-start">
-                <a href="{{ url("/") }}"
+                <a href="{{ url('/') }}"
                     class="text-lg font-bold tracking-tighter text-black-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
                     BeautyPalour
                 </a>

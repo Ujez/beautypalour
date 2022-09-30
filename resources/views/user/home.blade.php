@@ -1,59 +1,4 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="{{ asset('frontend/dist/output.css') }}" rel="stylesheet" />
-    <link href="{{ asset('frontend/helper/swiper.css') }}" rel="stylesheet" />
-    <link href="{{ asset('/resources/css/app.css') }}" rel="stylesheet" />
-    <script src="//unpkg.com/alpinejs" defer></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet" />
-    <script>
-        const defaultTheme = require('tailwindcss/defaultTheme');
-
-        /** @type {import('tailwindcss').Config} */
-        module.exports = {
-            content: [
-                './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-                './vendor/laravel/jetstream/**/*.blade.php',
-                './storage/framework/views/*.php',
-                './resources/views/**/*.blade.php',
-            ],
-
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-                        'josefin': ['Josefin Sans', 'ubuntu'],
-
-                    },
-                },
-            },
-
-            plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-        };
-    </script>
-    <style type="text/tailwindcss">
-        @tailwind base;
-        @tailwind components;
-        @tailwind utilities;
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: "Josefin Sans", sans-serif;
-        }
-    </style>
-    <!-- <script src="./helper/swiper.js"></script> -->
-</head>
+@extends('layouts.heading')
 
 <body>
 
@@ -63,7 +8,7 @@
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
             <div class="flex flex-row items-center justify-between lg:justify-start">
-                <a href="{{ url('/') }}"
+                <a href="{{ route('home') }}"
                     class="text-lg font-bold tracking-tighter text-black-600 transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8">
                     BeautyPalour
                 </a>
@@ -119,7 +64,7 @@
                         class="max-w-5xl text-2xl font-black font-jost  leading-none tracking-tighter text-neutral-600 md:text-5xl lg:text-6xl lg:max-w-7xl">
                         THE LEADING BEAUTY LOUNGE
                     </h1>
-                    <p class="max-w-xl mx-auto mt-8 text-base leading-relaxed text-center text-gray-500">
+                    <p id="fweight" class="max-w-xl mx-auto mt-8  leading-relaxed text-center ">
                         Style is something each of us already has, all we need to do is find it.
                         Style is a way to say who you are without having to speak. —Rachel Zoe
                     </p>
@@ -174,7 +119,7 @@
                         <div class="text-black font-normal text-xl mb-2 leading-tight">
                             Can coffee make you a biMter masseuse?
                         </div>
-                        <p class="text-grey-darker text-base">Read more</p>
+                        <p id="fweight" class="text-grey-darker text-base">Read more</p>
                     </div>
                     <img class="block h-auto w-full lg:w-48 flex-none bg-cover"
                         src="{{ asset('frontend/images/b1.jpg') }}" />
@@ -187,7 +132,7 @@
                         <div class="text-black font-bold text-xl mb-2 leading-tight">
                             Can coffee make you a biMter masseuse?
                         </div>
-                        <p class="text-grey-darker text-base">Read more</p>
+                        <p id="fweight" class="text-grey-darker text-base">Read more</p>
                     </div>
                     <img class="block h-auto w-full lg:w-48 flex-none bg-cover"
                         src="{{ asset('frontend/images/13.jpeg') }}" />
@@ -201,7 +146,7 @@
                         <div class="text-black font-bold text-xl mb-2 leading-tight">
                             Can coffee make you a biMter masseuse?
                         </div>
-                        <p class="text-grey-darker text-base">Read more</p>
+                        <p id="fweight" class="text-grey-darker text-base">Read more</p>
                     </div>
                     <img class="block h-auto w-full lg:w-48 flex-none bg-cover"
                         src="{{ asset('frontend/images/b2.jpeg') }}" />
@@ -215,7 +160,7 @@
                         <div class="text-black font-bold text-xl mb-2 leading-tight">
                             Can coffee make you a biMter masseuse?
                         </div>
-                        <p class="text-grey-darker text-base">Read more</p>
+                        <p id="fweight" class="text-grey-darker text-base">Read more</p>
                     </div>
                     <img class="block h-auto w-full lg:w-48 flex-none bg-cover"
                         src="{{ asset('frontend/images/b3.jpg') }}" />

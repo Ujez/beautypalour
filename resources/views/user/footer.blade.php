@@ -6,10 +6,7 @@
                 <div class="xl:flex lg:flex md:flex pt-6">
                     <div class="w-11/12 xl:w-3/6 lg:w-2/5 mx-auto lg:mx-0 xl:mx-0">
                         <div class="flex items-center mb-6 xl:mb-0 lg:mb-0">
-                            <div aria-label="logo" role="img">
-                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/footer_with_sitemap-svg1.svg"
-                                    alt="logo" />
-                            </div>
+                           <a href="{{ route('home') }}"></a>
                             <p tabindex="0" class="focus:outline-none ml-3 font-bold text-xl">
                                 BeautyPalour
                             </p>

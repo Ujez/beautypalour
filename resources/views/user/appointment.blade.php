@@ -2,7 +2,7 @@
     <div class="container px-5 py-24 mx-auto">
         <div class="flex flex-col text-center w-full mb-12">
             <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4  text-neutral-600">Contact Us</h1>
-            <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Redefining your beauty is just one click away</p>
+            <p id="fweight" class="lg:w-2/3 mx-auto leading-relaxed">Redefining your beauty is just one click away</p>
         </div>
         <form action="{{ url('appointments') }}" method="POST">
             @csrf
