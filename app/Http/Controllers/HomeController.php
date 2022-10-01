@@ -96,8 +96,6 @@ class HomeController extends Controller
     }
     public function showbookings()
     {
-
         return view('admin.showbookings');
-
     }
 }
