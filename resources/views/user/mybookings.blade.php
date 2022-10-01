@@ -2,7 +2,7 @@
 
 <!-- component -->
 <div class="mt-10">
-    <div class="min-w-screen flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
+    <div class="min-w-screen flex items-center justify-center bg-gray-100 font-josefin overflow-hidden">
         <div class="w-full lg:w-5/6">
             <div class="bg-white shadow-md rounded my-6 overflow-auto">
                 <table class="min-w-max w-full table-auto ">

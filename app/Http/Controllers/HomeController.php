@@ -49,20 +49,32 @@ class HomeController extends Controller
     }
     public function appointment(Request $request)
     {
+        // $data = new Appointments();
+        // $data->name = $request->name;
+        // $data->email = $request->email;
+        // $data->date = $request->date;
+        // $data->phone = $request->phone;
+        // $data->specialist = $request->specialist;
+        // $data->message = $request->message;
+        // $data->status = 'In progress';
+
+        Appointments::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'date' => $request->date,
+            'phone' => $request->phone,
+            'specialist' => $request->specialist,
+            'message' => $request->message,
+            'status' => 'In progress',
+        ]);
+
         $data = new Appointments();
-        $data->name = $request->name;
-        $data->email = $request->email;
-        $data->date = $request->date;
-        $data->phone = $request->phone;
-        $data->specialist = $request->specialist;
-        $data->message = $request->message;
-        $data->status = 'In progress';
+
         if (Auth::id()) {
             $data->user_id = Auth::user()->id;
-
         }
         $data->save();
-        return redirect()->back()->with("success", "Appointment successfully scheduled, we'll contact you ASAP!");
+        return Redirect()->back()->with("success", "Appointment successfully scheduled, we'll contact you ASAP!");
     }
 
     public function mybookings()
@@ -77,15 +89,15 @@ class HomeController extends Controller
     }
     public function cancelbookings($id)
     {
-      $data=Appointments::find($id);
-      $data->delete();
-      return redirect()->back();
+        $data = Appointments::find($id);
+        $data->delete();
+        return redirect()->back();
 
     }
     public function showbookings()
     {
-        
-     return view('admin.showbookings');
+
+        return view('admin.showbookings');
 
     }
 }

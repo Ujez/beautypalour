@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cardo&family=Josefin+Sans:wght@700&display=swap"
+        rel="stylesheet">
     <script>
         const defaultTheme = require('tailwindcss/defaultTheme');
 
@@ -63,11 +65,11 @@
             /* font-weight: normal; */
             font-family: 'Cardo', serif;
         }
+
         .fweight {
             /* font-weight: normal; */
             font-family: 'Cardo', serif;
         }
-
     </style>
     <!-- <script src="./helper/swiper.js"></script> -->
 </head>
