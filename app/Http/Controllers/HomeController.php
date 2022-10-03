@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Appointments;
 use App\Models\User;
 use App\Models\Vendor;
+use Illuminate\Support\Carbon;
+
 // use GuzzleHttp\Psr7\Request; silly bug
 
 use Illuminate\Http\Request;
@@ -24,7 +26,8 @@ class HomeController extends Controller
         // }
 
         if (Auth::id()) {
-            if (Auth::user()->usertype == '0' || '1') {
+            // if (Auth::user()->usertype == '0' || '1')
+            if (Auth::user()->usertype ==  '0') {
                 $vendor = vendor::all();
                 return view('user.home', compact('vendor'));
             } else {
@@ -61,7 +64,7 @@ class HomeController extends Controller
         Appointments::insert([
             'name' => $request->name,
             'email' => $request->email,
-            'date' => $request->date,
+            'created_at' => Carbon::now(),
             'phone' => $request->phone,
             'specialist' => $request->specialist,
             'message' => $request->message,
