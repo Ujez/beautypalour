@@ -1,9 +1,6 @@
 @extends('layouts.heading')
 
 <body>
-
-
-
     <div class="w-full max-w-12xl font-josefin">
         <div x-data="{ open: false }"
             class="flex flex-col max-w-screen-xl p-5 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
@@ -23,7 +20,7 @@
                     </svg>
                 </button>
             </div>
-
+            <!------------------------------------- NAVIGATION SECTION ------------------------------------->
             <nav :class="{ 'flex': open, 'hidden': !open }"
                 class="flex-col items-center flex-grow pb-4 border-gray-600 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2 hidden">
                 <a class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 hover:text-black-600 focus:outline-none focus:shadow-outline"
@@ -32,12 +29,12 @@
                     href="#products">Products</a>
 
                 <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
+                    <!--------------- IF THE USER IS LOGGED-IN DISPLAY THE MYBOOKINGS OTHERWISE DISPLAY DEFAULT NAV------ -->
                     @if (Route::has('login'))
                         @auth
                             <a class="px-4 py-2 mt-2 text-sm text-gray-500 md:mt-0 text-center text-black-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500"
                                 href="{{ route('mybookings') }}">My Bookings</a>
                             <x-app-layout></x-app-layout>
-                      
                         @else
                             <a href="{{ route('login') }}"> <button
                                     class="items-center block px-10 py-2.5 text-base font-medium text-center text-black-600 transition duration-500 ease-in-out transform border-2 border-white shadow-md rounded-xl focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
@@ -54,8 +51,27 @@
 
                 </div>
             </nav>
+
+            <!----------------------------------- NAVIGATION SECTION END ------------------------------------->
         </div>
-        <!-- Slider main container -->
+
+        <!-- ---------------------THIS IS USED TO DISPLAY THE SUCCESS MESSAGE------------------------- -->
+        @if (session('success'))
+            <div class="px-40 mt-24 ">
+                <div id="dismiss" class="bg-green-100 border  px-4 py-3 rounded relative" role="alert">
+                    <p>{{ session('success') }}</p>
+                    <span id="toggle" class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                        <svg class="fill-current h-6 w-6 text-gray-500" role="button"
+                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                            <title>Close</title>
+                            <path
+                                d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                        </svg>
+                    </span>
+                </div>
+
+            </div>
+        @endif
 
         <section>
             <div class="px-4 py-5 mx-auto max-w-7xl sm:px-6 md:px-12 lg:px-24 lg:py-24">
@@ -77,6 +93,8 @@
             </div>
         </section>
 
+
+        <!-- ---------------------------------SLIDER MAIN CONTAINER START ------------------------------->
         <section id="intro">
             <div class="relative flex flex-col items-center justify-center mx-auto rounded-lg lg:px-10 max-w-7xl">
                 <div class="swiper mySwiper max-w-screen-xl p-5 mx-auto object-cover
@@ -101,8 +119,12 @@
                     <!-- <div class="swiper-pagination"></div> -->
                 </div>
         </section>
+        <!-- ---------------------------------SLIDER MAIN CONTAINER END ------------------------------->
 
-        <!------------------------------------- PRODUCTS CARDS --------------------------------->
+
+
+
+        <!------------------------------------- PRODUCTS SECTION ------------------------------------->
 
         <div class="container mt-24 max-w-7xl m-auto flex flex-wrap flex-col md:flex-row items-center justify-start">
             <div class="flex flex-col w-full mb-12 text-center">
@@ -167,36 +189,24 @@
                 </div>
             </div>
 
-            <!------------------------------- CARDS end -------------------------->
+            <!------------------------------- PRODUCTS SECTION END -------------------------->
 
-            <!------------------------------ TEAM START ------------------------->
+
+            <!------------------------------ TEAM START- ------------------------------------>
             @include('user.team')
-            <!------------------------------ TEAM END ------------------------->
+            <!------------------------------ TEAM END --------------------------------------->
 
 
         </div>
-        @if (session('success'))
-            <div class="px-40 mt-24 ">
-                <div id="dismiss" class="bg-green-100 border  px-4 py-3 rounded relative" role="alert">
-                    <p>{{ session('success') }}</p>
-                    <span id="toggle" class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                        <svg class="fill-current h-6 w-6 text-gray-500" role="button"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                            <title>Close</title>
-                            <path
-                                d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
-                        </svg>
-                    </span>
-                </div>
-
-            </div>
-        @endif
-
+        <!------------------------------ APPOINTMENT START------------------------------------>
         @include('user.appointment')
+        <!------------------------------ APPOINTMENT END-------------------------------------->
+
+
     </div>
 
 
-    <!-- FOOTER -->
+    <!--------------------------------------FOOTER START---------------------------------------->
 
     <div class="pt-12 xl:pt-14 px-6">
         <div tabindex="0" aria-label="footer"
@@ -274,10 +284,8 @@
         </div>
 
     </div>
+    <!--------------------------------------FOOTER END---------------------------------------->
 
-
-
-    <!-- FOOTER END -->
 
 
 

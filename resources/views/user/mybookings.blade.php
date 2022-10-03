@@ -1,6 +1,6 @@
 @include('layouts.header')
 
-<!-- component -->
+ <!-----------------------------------THE BOOKINGS TABLE ------------------------------------->
 <div class="mt-10">
     <div class="min-w-screen flex items-center justify-center bg-gray-100 font-josefin overflow-hidden">
         <div class="w-full lg:w-5/6">
@@ -16,7 +16,10 @@
                             <th class="py-3 px-6 text-left">Cancel</th>
                         </tr>
                     </thead>
+
+
                     <tbody class="text-gray-600 text-sm font-light">
+                        <!----------------------------------- LOOP THROUGH THE BOOKINGS IN THE DB  ------------------------------------->
                         @foreach ($booking as $bookings)
                             <tr class="border-b border-gray-200 hover:bg-gray-100">
                                 <td class="py-3 px-6 text-left ">
@@ -54,14 +57,17 @@
 
                             </tr>
                         @endforeach
-
-
+                         <!----------------------------------- LOOP THROUGH THE BOOKINGS IN THE DB  END ------------------------------------->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 </div>
+
+
+ <!-----------------------------------THE BOOKINGS TABLE  END------------------------------------->
+
 
 
 <style>

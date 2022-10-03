@@ -3,26 +3,30 @@
     <section class="overflow-hidden text-gray-600 body-font relative">
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-col text-center w-full mb-12">
+                <!-----------------------------------DISPLAY SUCCESS MESSAGE START------------------------------------->
                 @if (session('success'))
-                <div class="px-40 my-10 ">
-                    <div id="dismiss" class="bg-green-100 border  px-4 py-3 rounded relative" role="alert">
-                        <p class="font-bold">{{ session('success') }}</p>
-                        <span id="toggle" class="absolute top-0 bottom-0 right-0 px-4 py-3">
-                            <svg class="fill-current h-6 w-6 text-gray-500" role="button"
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                                <title>Close</title>
-                                <path
-                                    d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
-                            </svg>
-                        </span>
+                    <div class="px-40 my-10 ">
+                        <div id="dismiss" class="bg-green-100 border  px-4 py-3 rounded relative" role="alert">
+                            <p class="font-bold">{{ session('success') }}</p>
+                            <span id="toggle" class="absolute top-0 bottom-0 right-0 px-4 py-3">
+                                <svg class="fill-current h-6 w-6 text-gray-500" role="button"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                    <title>Close</title>
+                                    <path
+                                        d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" />
+                                </svg>
+                            </span>
+                        </div>
+
                     </div>
-    
-                </div>
-            @endif
+                @endif
+                <!-----------------------------------DISPLAY SUCCESS MESSAGE END------------------------------------->
 
                 <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4  text-neutral-600">Add A Vendor</h1>
                 <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Vendors are added by the admin only</p>
             </div>
+
+            <!---------------------------------------CREATE A NEW VENDOR------------------------------------->
             <form action="{{ url('upload_vendor') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="lg:w-1/2 md:w-2/3 mx-auto">
@@ -86,6 +90,8 @@
                     </div>
                 </div>
             </form>
+            <!-----------------------------------CREATE A NEW VENDOR END------------------------------------->
+
         </div>
     </section>
 @endsection

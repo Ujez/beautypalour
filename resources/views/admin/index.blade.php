@@ -1,7 +1,8 @@
-
 @include('admin.header')
 
 <body class="bg-gray-100 font-family-josefin flex">
+
+    <!-----------------------------------THE ASIDE SECTION END------------------------------------->
 
     <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
         <div class="p-6">
@@ -21,39 +22,46 @@
                 class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
                 <i class="fas fa-home mr-3"></i>
                 Home
-            <a href="{{ route('add.vendor') }}"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-plus mr-3"></i>
-                Add Vendor
-            </a>
-            <a href="{{ url('showbookings') }}"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-table mr-3"></i>
-                Bookings
-            </a>
-          
-            <a href="forms.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-align-left mr-3"></i>
-                Forms
-            </a>
-            <a href="tabs.html" class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-tablet-alt mr-3"></i>
-                Tabbed Content
-            </a>
-            <a href="calendar.html"
-                class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
-                <i class="fas fa-calendar mr-3"></i>
-                Calendar
-            </a>
-            {{-- <x-app-layout>
+                <a href="{{ route('add.vendor') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-plus mr-3"></i>
+                    Add Vendor
+                </a>
+                <a href="{{ url('showbookings') }}"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-table mr-3"></i>
+                    Bookings
+                </a>
+
+                <a href="forms.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-align-left mr-3"></i>
+                    Forms
+                </a>
+                <a href="tabs.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-tablet-alt mr-3"></i>
+                    Tabbed Content
+                </a>
+                <a href="calendar.html"
+                    class="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item">
+                    <i class="fas fa-calendar mr-3"></i>
+                    Calendar
+                </a>
+                {{-- <x-app-layout>
 
             </x-app-layout> --}}
         </nav>
 
     </aside>
 
+    <!-----------------------------------THE ASIDE SECTION END------------------------------------->
+
     <div class="w-full flex flex-col h-screen overflow-y-hidden">
-        <!-- Desktop Header -->
+
+
+        <!-----------------------------------THE DESKTOP HEADER SECTION START------------------------------------->
+
         <header class="w-full items-center bg-white py-2 px-6 hidden sm:flex">
             <div class="w-1/2"></div>
             <div x-data="{ isOpen: false }" class="relative w-1/2 flex justify-end">
@@ -88,7 +96,8 @@
                 </button>
             </div>
 
-            <!-- Dropdown Nav -->
+            <!-----------------------------------THE DROP-DOWN NAV SECTION START------------------------------------->
+
             <nav :class="isOpen ? 'flex' : 'hidden'" class="flex flex-col pt-4">
                 <a href="{{ url('/') }}" class="flex items-center  text-white py-2 pl-4 nav-item">
                     <i class="fas fa-home mr-3"></i>
@@ -125,10 +134,15 @@
                 </x-app-layout>
 
             </nav>
+
+            <!-----------------------------------THE DROP-DOWN NAV SECTION END------------------------------------->
             <!-- <button class="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
                 <i class="fas fa-plus mr-3"></i> New Report
             </button> -->
         </header>
+
+        <!-----------------------------------THE DESKTOP HEADER SECTION END------------------------------------->
+
 
         <div class="w-full overflow-x-hidden border-t flex flex-col">
             <main class="w-full flex-grow p-6">
@@ -143,7 +157,7 @@
 
     </div>
 
-  
+
     {{-- <script>
         var chartOne = document.getElementById('chartOne');
         var myChart = new Chart(chartOne, {

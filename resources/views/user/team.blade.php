@@ -68,6 +68,10 @@
         </div>
     </div>
 </div> --}}
+
+
+ <!-----------------------------------THE TEAM SECTION IN THE WORKS ------------------------------------->
+
 <div class="flex flex-wrap items-stretch xl:justify-between justify-center mt-24 xl:gap-6 gap-4">
     <div class="flex flex-col w-full mb-12 text-center">
       <h1
@@ -132,4 +136,4 @@
           </div>
       </div>
   </div>
-
+ <!-----------------------------------THE TEAM SECTION IN THE WORKS END ------------------------------------->

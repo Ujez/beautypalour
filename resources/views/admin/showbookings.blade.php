@@ -1,5 +1,8 @@
 @extends('admin.index')
 @section('showbookings')
+
+ <!-----------------------------------THE BOOKINGS TABLE FOR ADMIN ------------------------------------->
+
     <div class="mt-10">
         <div class="min-w-screen flex items-center justify-center bg-gray-100 font-sans overflow-hidden">
             <div class="w-full lg:w-5/6">
@@ -86,6 +89,8 @@
             </div>
         </div>
     </div>
+
+     <!-----------------------------------THE BOOKINGS TABLE FOR ADMIN END ------------------------------------->
 
 
     <style>
